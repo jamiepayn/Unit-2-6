@@ -10,7 +10,7 @@ public class bullet : MonoBehaviour
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
-        rb.velocity=new Vector2(-4,0);
+        rb.velocity=new Vector2(-8,0);
     }
 
     // Update is called once per frame
@@ -21,7 +21,11 @@ public class bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         print("collided");
-        Instantiate(impact, transform.position);
+        Destroy(gameObject);
+        Instantiate(impact, transform.position, transform.rotation);
+       
+
+
     }
 
 
